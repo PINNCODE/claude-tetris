@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tetris</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- HEAD-PLUGINS -->
+  <link rel="stylesheet" href="pause.css" />
 </head>
 <body>
   <div class="wrapper">
@@ -49,9 +51,28 @@
         <p id="overlay-score"></p>
         <button id="restart-btn">Reiniciar</button>
       </div>
+      <div class="overlay-screen overlay-pause" hidden>
+        <p class="overlay-pause-title">PAUSA</p>
+        <button type="button" id="pause-resume-btn" class="pause-btn pause-btn-primary">Reanudar</button>
+        <button type="button" id="pause-restart-btn" class="pause-btn">Reiniciar</button>
+        <button type="button" id="pause-controls-btn" class="pause-btn">Ver controles</button>
+        <ul id="pause-controls-list" class="pause-controls-list" hidden>
+          <li><kbd>←</kbd><kbd>→</kbd> mover</li>
+          <li><kbd>↑</kbd> o <kbd>X</kbd> rotar</li>
+          <li><kbd>↓</kbd> bajar</li>
+          <li><kbd>Space</kbd> caída</li>
+          <li><kbd>P</kbd> o <kbd>Esc</kbd> pausa</li>
+        </ul>
+        <div class="pause-level-row">
+          <label for="pause-level-select" class="pause-level-label">Nivel inicial</label>
+          <select id="pause-level-select" class="pause-level-select"></select>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- BODY-PLUGINS -->
+  <script src="pause.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
