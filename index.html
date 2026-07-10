@@ -8,6 +8,7 @@
   <!-- HEAD-PLUGINS -->
   <link rel="stylesheet" href="pause.css" />
   <link rel="stylesheet" href="skins.css" />
+  <link rel="stylesheet" href="records.css" />
 </head>
 <body>
   <div class="wrapper">
@@ -36,17 +37,23 @@
         <div class="panel-section controls">
           <span class="label">CONTROLS</span>
           <ul>
-            <li><kbd>←</kbd><kbd>→</kbd> mover</li>
-            <li><kbd>↑</kbd> rotar</li>
-            <li><kbd>↓</kbd> bajar</li>
-            <li><kbd>Space</kbd> caída</li>
+            <li><kbd>&larr;</kbd><kbd>&rarr;</kbd> mover</li>
+            <li><kbd>&uarr;</kbd> rotar</li>
+            <li><kbd>&darr;</kbd> bajar</li>
+            <li><kbd>Space</kbd> ca&iacute;da</li>
             <li><kbd>P</kbd> pausa</li>
           </ul>
         </div>
 
-        <div class="panel-section skin-selector">
+<div class="panel-section skin-selector">
           <span class="label">SKIN</span>
           <div class="skin-buttons" id="skin-buttons"></div>
+        </div>
+
+        <div class="panel-section records-panel">
+          <span class="label">R&Eacute;CORDS</span>
+          <ol class="records-list" id="records-list"></ol>
+          <button type="button" class="records-reset" id="records-reset-btn">Resetear</button>
         </div>
       </aside>
     </div>
@@ -57,16 +64,16 @@
         <p id="overlay-score"></p>
         <button id="restart-btn">Reiniciar</button>
       </div>
-      <div class="overlay-screen overlay-pause" hidden>
+<div class="overlay-screen overlay-pause" hidden>
         <p class="overlay-pause-title">PAUSA</p>
         <button type="button" id="pause-resume-btn" class="pause-btn pause-btn-primary">Reanudar</button>
         <button type="button" id="pause-restart-btn" class="pause-btn">Reiniciar</button>
         <button type="button" id="pause-controls-btn" class="pause-btn">Ver controles</button>
         <ul id="pause-controls-list" class="pause-controls-list" hidden>
-          <li><kbd>←</kbd><kbd>→</kbd> mover</li>
-          <li><kbd>↑</kbd> o <kbd>X</kbd> rotar</li>
-          <li><kbd>↓</kbd> bajar</li>
-          <li><kbd>Space</kbd> caída</li>
+          <li><kbd>&larr;</kbd><kbd>&rarr;</kbd> mover</li>
+          <li><kbd>&uarr;</kbd> o <kbd>X</kbd> rotar</li>
+          <li><kbd>&darr;</kbd> bajar</li>
+          <li><kbd>Space</kbd> ca&iacute;da</li>
           <li><kbd>P</kbd> o <kbd>Esc</kbd> pausa</li>
         </ul>
         <div class="pause-level-row">
@@ -74,12 +81,35 @@
           <select id="pause-level-select" class="pause-level-select"></select>
         </div>
       </div>
+      <div class="overlay-screen overlay-records" hidden>
+        <p class="overlay-records-title">GAME OVER</p>
+        <p class="overlay-records-stats" id="overlay-records-stats"></p>
+        <div class="records-name-row" id="records-name-row" hidden>
+          <label for="records-name-input" class="records-name-label">&iexcl;NUEVO R&Eacute;CORD! Tu nombre:</label>
+          <input type="text" id="records-name-input" class="records-name-input" maxlength="3" />
+          <button type="button" class="records-save-btn" id="records-save-btn">Guardar</button>
+        </div>
+        <table class="records-table" id="overlay-records-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Puntos</th>
+              <th>L&iacute;neas</th>
+              <th>Combo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" class="records-play-again" id="records-play-again-btn">Jugar de nuevo</button>
+      </div>
     </div>
   </div>
 
   <!-- BODY-PLUGINS -->
   <script src="pause.js"></script>
   <script src="skins.js"></script>
+  <script src="records.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
