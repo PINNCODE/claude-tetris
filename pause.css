@@ -1,0 +1,112 @@
+/* === PLUGINS === */
+
+/* === BEGIN PAUSE === */
+.overlay-screen[hidden] {
+  display: none;
+}
+
+.overlay-pause {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 240px;
+  padding: 20px 28px;
+}
+
+.overlay-pause-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #7aa2f7;
+  margin-bottom: 4px;
+}
+
+.pause-btn {
+  background: #22223a;
+  color: #e0e0e0;
+  border: 1px solid #3a3a5a;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  min-width: 180px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.pause-btn:hover {
+  background: #2e2e4a;
+  border-color: #5a5a7a;
+}
+
+.pause-btn-primary {
+  background: #7aa2f7;
+  color: #0f0f17;
+  border-color: #7aa2f7;
+}
+
+.pause-btn-primary:hover {
+  background: #9bbdff;
+  border-color: #9bbdff;
+}
+
+.pause-controls-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: #888;
+  background: #16162a;
+  border: 1px solid #2a2a3a;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+.pause-controls-list[hidden] {
+  display: none;
+}
+
+.pause-controls-list li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pause-level-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.pause-level-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #555570;
+  font-weight: 600;
+}
+
+.pause-level-select {
+  background: #1a1a25;
+  color: #e0e0e0;
+  border: 1px solid #3a3a5a;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 100px;
+  text-align: center;
+}
+
+.pause-level-select:focus {
+  outline: none;
+  border-color: #7aa2f7;
+}
+/* === END PAUSE === */
