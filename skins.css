@@ -1,0 +1,58 @@
+/* === PLUGINS === */
+
+/* === BEGIN SKINS === */
+.overlay-screen[hidden] {
+  display: none;
+}
+
+.skin-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skin-btn {
+  background: #1a1a25;
+  color: #e0e0e0;
+  border: 1px solid #2a2a3a;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.skin-btn:hover {
+  background: #22223a;
+  border-color: #3a3a5a;
+}
+
+.skin-btn.is-active {
+  border-color: #7aa2f7;
+  background: #1f2433;
+}
+
+.skin-btn-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e0e0e0;
+  text-align: left;
+}
+
+.skin-btn-swatches {
+  display: flex;
+  gap: 2px;
+}
+
+.skin-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+/* === END SKINS === */
