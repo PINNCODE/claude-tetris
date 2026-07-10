@@ -41,6 +41,8 @@ const overlayScore = document.getElementById('overlay-score');
 const restartBtn = document.getElementById('restart-btn');
 
 let board, current, next, score, lines, level, paused, gameOver, lastTime, dropAccum, dropInterval, animId;
+let maxLinesInOneDrop = 0;
+let maxLinesEver = 0;
 
 function createBoard() {
   return Array.from({ length: ROWS }, () => new Array(COLS).fill(0));
@@ -110,6 +112,8 @@ function clearLines() {
     dropInterval = Math.max(100, 1000 - (level - 1) * 90);
     updateHUD();
   }
+  if (cleared > maxLinesInOneDrop) maxLinesInOneDrop = cleared;
+  if (lines > maxLinesEver) maxLinesEver = lines;
 }
 
 function ghostY() {
@@ -265,6 +269,8 @@ function init() {
   gameOver = false;
   dropInterval = 1000;
   dropAccum = 0;
+  maxLinesInOneDrop = 0;
+  maxLinesEver = 0;
   lastTime = performance.now();
   next = randomPiece();
   spawn();

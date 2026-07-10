@@ -1,0 +1,252 @@
+/* === PLUGINS === */
+
+/* === BEGIN RECORDS === */
+.overlay-screen[hidden] {
+  display: none;
+}
+
+/* ---- Sidebar records panel ---- */
+.records-panel {
+  gap: 8px;
+}
+
+.records-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #c0c0d0;
+}
+
+.records-list:empty::before {
+  content: 'Sin récords aún';
+  font-style: italic;
+  color: #555570;
+  font-size: 11px;
+}
+
+.records-list li {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 6px;
+  align-items: baseline;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.records-list li.is-current {
+  background: rgba(122, 162, 247, 0.12);
+  color: #7aa2f7;
+}
+
+.records-list-rank {
+  color: #555570;
+  font-weight: 700;
+}
+
+.records-list-name {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.records-list-score {
+  font-weight: 700;
+  color: #ffd54f;
+}
+
+.records-list li.is-current .records-list-score {
+  color: #7aa2f7;
+}
+
+.records-reset {
+  background: transparent;
+  color: #888;
+  border: 1px solid #2a2a3a;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.records-reset:hover {
+  background: #22223a;
+  border-color: #5a5a7a;
+  color: #e57373;
+}
+
+/* ---- Overlay records screen ---- */
+.overlay-records {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 360px;
+  padding: 20px 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.overlay-records-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #e57373;
+  margin: 0;
+}
+
+.overlay-records-stats {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: #c0c0d0;
+  text-align: center;
+  margin: 0;
+}
+
+.records-name-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(122, 162, 247, 0.08);
+  border: 1px solid #7aa2f7;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin: 0;
+}
+
+.records-name-row[hidden] {
+  display: none;
+}
+
+.records-name-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #7aa2f7;
+  font-weight: 700;
+}
+
+.records-name-input {
+  background: #0f0f17;
+  color: #e0e0e0;
+  border: 1px solid #3a3a5a;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  letter-spacing: 4px;
+  width: 80px;
+  text-transform: uppercase;
+}
+
+.records-name-input:focus {
+  outline: none;
+  border-color: #7aa2f7;
+}
+
+.records-save-btn {
+  background: #7aa2f7;
+  color: #0f0f17;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+.records-save-btn:hover {
+  background: #9bbdff;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #c0c0d0;
+}
+
+.records-table thead th {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #555570;
+  font-weight: 600;
+  text-align: left;
+  padding: 4px 6px;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+.records-table tbody td {
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+}
+
+.records-table tbody tr.is-current {
+  background: rgba(122, 162, 247, 0.12);
+  color: #7aa2f7;
+  font-weight: 700;
+}
+
+.records-table tbody tr.is-current td {
+  color: #7aa2f7;
+}
+
+.records-table-rank {
+  color: #555570;
+  font-weight: 700;
+  width: 28px;
+}
+
+.records-table-name {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.records-table-score {
+  color: #ffd54f;
+  font-weight: 700;
+  text-align: right;
+}
+
+.records-table tr.is-current .records-table-score {
+  color: #7aa2f7;
+}
+
+.records-play-again {
+  margin-top: 8px;
+  background: #7aa2f7;
+  color: #0f0f17;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: inherit;
+}
+
+.records-play-again:hover {
+  background: #9bbdff;
+}
+
+/* ---- Stats panel below table on overlay ---- */
+.overlay-records-meta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}
+/* === END RECORDS === */
