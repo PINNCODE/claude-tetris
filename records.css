@@ -19,13 +19,13 @@
   gap: 4px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 12px;
-  color: #c0c0d0;
+  color: var(--text-dim);
 }
 
 .records-list:empty::before {
   content: 'Sin récords aún';
   font-style: italic;
-  color: #555570;
+  color: var(--text-faint);
   font-size: 11px;
 }
 
@@ -39,12 +39,12 @@
 }
 
 .records-list li.is-current {
-  background: rgba(122, 162, 247, 0.12);
-  color: #7aa2f7;
+  background: rgba(var(--accent-rgb), 0.12);
+  color: var(--accent);
 }
 
 .records-list-rank {
-  color: #555570;
+  color: var(--text-faint);
   font-weight: 700;
 }
 
@@ -55,17 +55,17 @@
 
 .records-list-score {
   font-weight: 700;
-  color: #ffd54f;
+  color: var(--gold);
 }
 
 .records-list li.is-current .records-list-score {
-  color: #7aa2f7;
+  color: var(--accent);
 }
 
 .records-reset {
   background: transparent;
-  color: #888;
-  border: 1px solid #2a2a3a;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 11px;
@@ -77,9 +77,9 @@
 }
 
 .records-reset:hover {
-  background: #22223a;
-  border-color: #5a5a7a;
-  color: #e57373;
+  background: var(--panel-hover);
+  border-color: var(--border-strong);
+  color: var(--danger);
 }
 
 /* ---- Overlay records screen ---- */
@@ -98,14 +98,14 @@
   font-size: 28px;
   font-weight: 800;
   letter-spacing: 4px;
-  color: #e57373;
+  color: var(--danger);
   margin: 0;
 }
 
 .overlay-records-stats {
   font-family: 'Courier New', Courier, monospace;
   font-size: 13px;
-  color: #c0c0d0;
+  color: var(--text-dim);
   text-align: center;
   margin: 0;
 }
@@ -115,8 +115,8 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  background: rgba(122, 162, 247, 0.08);
-  border: 1px solid #7aa2f7;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid var(--accent);
   border-radius: 6px;
   padding: 10px 16px;
   margin: 0;
@@ -129,14 +129,14 @@
 .records-name-label {
   font-size: 11px;
   letter-spacing: 1px;
-  color: #7aa2f7;
+  color: var(--accent);
   font-weight: 700;
 }
 
 .records-name-input {
-  background: #0f0f17;
-  color: #e0e0e0;
-  border: 1px solid #3a3a5a;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 4px;
   padding: 6px 10px;
   font-size: 16px;
@@ -149,12 +149,12 @@
 
 .records-name-input:focus {
   outline: none;
-  border-color: #7aa2f7;
+  border-color: var(--accent);
 }
 
 .records-save-btn {
-  background: #7aa2f7;
-  color: #0f0f17;
+  background: var(--accent);
+  color: var(--accent-contrast);
   border: none;
   border-radius: 4px;
   padding: 6px 16px;
@@ -166,7 +166,7 @@
 }
 
 .records-save-btn:hover {
-  background: #9bbdff;
+  background: var(--accent-hover);
 }
 
 .records-table {
@@ -174,36 +174,36 @@
   border-collapse: collapse;
   font-family: 'Courier New', Courier, monospace;
   font-size: 12px;
-  color: #c0c0d0;
+  color: var(--text-dim);
 }
 
 .records-table thead th {
   font-size: 10px;
   letter-spacing: 1px;
-  color: #555570;
+  color: var(--text-faint);
   font-weight: 600;
   text-align: left;
   padding: 4px 6px;
-  border-bottom: 1px solid #2a2a3a;
+  border-bottom: 1px solid var(--border);
 }
 
 .records-table tbody td {
   padding: 5px 6px;
-  border-bottom: 1px solid rgba(42, 42, 58, 0.5);
+  border-bottom: 1px solid var(--border);
 }
 
 .records-table tbody tr.is-current {
-  background: rgba(122, 162, 247, 0.12);
-  color: #7aa2f7;
+  background: rgba(var(--accent-rgb), 0.12);
+  color: var(--accent);
   font-weight: 700;
 }
 
 .records-table tbody tr.is-current td {
-  color: #7aa2f7;
+  color: var(--accent);
 }
 
 .records-table-rank {
-  color: #555570;
+  color: var(--text-faint);
   font-weight: 700;
   width: 28px;
 }
@@ -214,19 +214,19 @@
 }
 
 .records-table-score {
-  color: #ffd54f;
+  color: var(--gold);
   font-weight: 700;
   text-align: right;
 }
 
 .records-table tr.is-current .records-table-score {
-  color: #7aa2f7;
+  color: var(--accent);
 }
 
 .records-play-again {
   margin-top: 8px;
-  background: #7aa2f7;
-  color: #0f0f17;
+  background: var(--accent);
+  color: var(--accent-contrast);
   border: none;
   border-radius: 6px;
   padding: 10px 28px;
@@ -238,14 +238,14 @@
 }
 
 .records-play-again:hover {
-  background: #9bbdff;
+  background: var(--accent-hover);
 }
 
 /* ---- Stats panel below table on overlay ---- */
 .overlay-records-meta {
   font-family: 'Courier New', Courier, monospace;
   font-size: 11px;
-  color: #888;
+  color: var(--text-dim);
   text-align: center;
   margin: 0;
 }

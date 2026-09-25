@@ -12,9 +12,9 @@
 }
 
 .skin-btn {
-  background: #1a1a25;
-  color: #e0e0e0;
-  border: 1px solid #2a2a3a;
+  background: var(--panel-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 6px 8px;
   cursor: pointer;
@@ -27,20 +27,20 @@
 }
 
 .skin-btn:hover {
-  background: #22223a;
-  border-color: #3a3a5a;
+  background: var(--panel-hover);
+  border-color: var(--border-strong);
 }
 
 .skin-btn.is-active {
-  border-color: #7aa2f7;
-  background: #1f2433;
+  border-color: var(--accent);
+  background: var(--panel-active);
 }
 
 .skin-btn-name {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #e0e0e0;
+  color: var(--text);
   text-align: left;
 }
 
