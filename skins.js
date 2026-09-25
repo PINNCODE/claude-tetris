@@ -16,7 +16,7 @@
   const RETRO_COLORS = [
     null,
     '#4dd0e1', '#ffd54f', '#ba68c8', '#81c784',
-    '#e57373', '#7986cb', '#ffb74d',
+    '#e57373', '#90caf9', '#ffb74d',
   ];
 
   function retroDrawBlock(context, x, y, colorIndex, size, alpha) {
