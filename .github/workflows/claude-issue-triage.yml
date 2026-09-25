@@ -1,0 +1,72 @@
+name: Claude Issue Triage
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Issue Triage
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            You are triaging a GitHub issue for a vanilla-JS Tetris game.
+            The codebase has: game.js (core engine), skins.js (skin selector plugin),
+            records.js (high scores plugin), pause.js (pause menu plugin), and four CSS files.
+
+            Issue #${{ github.event.issue.number }}
+            Title: ${{ github.event.issue.title }}
+            Body: ${{ github.event.issue.body }}
+
+            Do the following steps in order without asking for confirmation:
+
+            1. List available labels:
+               gh label list --repo ${{ github.repository }} --json name,description
+
+            2. Choose 1–3 fitting labels from the ones that actually exist in the repo.
+
+            3. Apply the labels:
+               gh issue edit ${{ github.event.issue.number }} \
+                 --add-label "<label1>,<label2>" \
+                 --repo ${{ github.repository }}
+
+            4. Post a diagnosis comment in Spanish:
+               gh issue comment ${{ github.event.issue.number }} \
+                 --body "$(cat <<'EOF'
+               <your structured comment here>
+               EOF
+               )" \
+                 --repo ${{ github.repository }}
+
+               The comment must include these sections:
+
+               ## 🔍 Diagnóstico del problema
+               Descripción clara de qué trata el issue.
+
+               ## 📁 Componentes afectados
+               Lista de archivos/sistemas involucrados (game.js, skins.js, records.js, pause.js, CSS, etc.)
+
+               ## ⚡ Complejidad estimada
+               simple / media / compleja — con una justificación breve.
+
+               ## 🛠 Enfoque sugerido
+               Pasos de alto nivel para implementar la solución.
+
+               ## ❓ Información faltante (si aplica)
+               Qué detalles adicionales ayudarían a resolver el issue.
+
+            Execute all steps completely and silently.
+          claude_args: '--allowedTools "Bash(gh issue *),Bash(gh label *)"'
